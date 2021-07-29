@@ -1,8 +1,9 @@
 import cors from 'cors';
+import 'express-async-errors';
 import express, { Request, Response, NextFunction } from 'express';
 
 import { AppError } from '@shared/errors/AppError';
-import { routes } from './routes';
+import { routes } from './routes/routes';
 
 import '@shared/typeorm';
 
