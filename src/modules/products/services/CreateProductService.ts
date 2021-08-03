@@ -10,11 +10,7 @@ interface IRequestProduct {
 }
 
 class CreateProductService {
-  public async execute({
-    name,
-    price,
-    quantity,
-  }: IRequestProduct): Promise<Product> {
+  async execute({ name, price, quantity }: IRequestProduct): Promise<Product> {
     const productRepository = getCustomRepository(ProductRepository);
 
     const productExists = await productRepository.findByName(name);

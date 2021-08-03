@@ -1,6 +1,7 @@
 import cors from 'cors';
 import 'express-async-errors';
 import express, { Request, Response, NextFunction } from 'express';
+import { errors } from 'celebrate';
 
 import { AppError } from '@shared/errors/AppError';
 import { routes } from './routes/routes';
@@ -16,6 +17,8 @@ app.use(express.json());
 app.use(cors());
 
 app.use(routes);
+
+app.use(errors());
 
 // Error middleware
 app.use(
